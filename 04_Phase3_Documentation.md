@@ -30,6 +30,8 @@
 - Total Leaves (Number)
 - Used Leaves (Number)
 - Remaining Leaves (Formula: Total – Used)
+
+- <img width="1886" height="920" alt="image" src="https://github.com/user-attachments/assets/de925a3a-77d6-4750-ac47-6e71675c96cf" />
   
 ## 3. Record Types
 
@@ -40,6 +42,9 @@
 - Earned Leave Request
 - Special Leave Request (e.g., Maternity, Paternity)
 - Each record type has different page layouts and approval rules.
+
+-  <img width="1892" height="804" alt="image" src="https://github.com/user-attachments/assets/92383ebb-4f63-4d9c-b225-d0b14378d3d2" />
+
 
 ## 4. Page Layouts
 
