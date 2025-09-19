@@ -18,9 +18,12 @@ For the Leave Tracker Project, the chosen edition is Salesforce Enterprise Editi
 
 ### 1. Users Created:
 
-   - Employees (end users submitting leave requests).
+- Employees (end users submitting leave requests).
 - Managers (approvers).
 - HR/Admin (monitoring, reporting).
+
+  <img width="1886" height="920" alt="image" src="https://github.com/user-attachments/assets/de925a3a-77d6-4750-ac47-6e71675c96cf" />
+
 
 ### 2. Licenses Assigned:
 
@@ -44,6 +47,17 @@ For the Leave Tracker Project, the chosen edition is Salesforce Enterprise Editi
 
 - Notification Access (Email/SMS integration).
 - Report & Dashboard Access.
+
+<img width="1894" height="909" alt="image" src="https://github.com/user-attachments/assets/1c5650ba-fb21-4263-9f79-564a838606eb" />
+
+### 4. Users:
+
+- Used to test the profiles, Roles, permission sets.
+- The user is used to edit the leave request to accepted , Rejected.
+
+  <img width="1887" height="898" alt="image" src="https://github.com/user-attachments/assets/bf930aa8-2296-44c2-9ac7-d892ef56a307" />
+
+
 
 ## OWD & Sharing Rules
 
