@@ -22,7 +22,7 @@ For the Leave Tracker Project, the chosen edition is Salesforce Enterprise Editi
 - Managers (approvers).
 - HR/Admin (monitoring, reporting).
 
-  <img width="1886" height="920" alt="image" src="https://github.com/user-attachments/assets/de925a3a-77d6-4750-ac47-6e71675c96cf" />
+
 
 
 ### 2. Licenses Assigned:
