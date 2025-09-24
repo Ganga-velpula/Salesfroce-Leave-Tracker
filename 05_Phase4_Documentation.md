@@ -1,31 +1,42 @@
 # Phase 4: Process Automation (Admin)
 ## 1. Validation Rules
 
-- From Date cannot be greater than To Date.
-- Reason field must be filled in before submitting a leave request.
-- Employees cannot apply for more leaves than their available balance.
-- Duplicate leave requests for the same period are restricted.
+- Ensures data quality and prevents invalid submissions.
+- End Date must be greater than Start Date
+-     End_Date__c < Start_Date__c
+- → Displays error message: "End Date must be later than Start Date."
 
-## 2. Workflow Rules (Legacy, but still considered in implementation)
+Reason Required for Submitted Requests
+Ensures employees provide a reason before submitting.
+
+## 2. Workflow Rules
 
 - Auto-update Status: When a leave request is submitted, set status to “Pending Approval.”
-- Email Alert: Notify manager when a new leave request is submitted.
 
-## 3. Process Builder (Now replaced by Flows, but documented for understanding)
+  <img width="1897" height="917" alt="image" src="https://github.com/user-attachments/assets/d6bf4d1a-a741-4d01-92c4-a9d61140d0c4" />
+
+Actions:
+
+  - Send email notification to the Manager.
+  - Update Status field to "Submitted".
+    
+Deletion:
+
+  - Top pop warning will be avaliable to delete the request to Employee.
+
+  - 
+    <img width="1876" height="895" alt="image" src="https://github.com/user-attachments/assets/39809e74-3a6b-45f8-b095-cf51f4713296" />
+
+## 3. Process Builder 
 
 ### On Leave Request Submission:
 
-- Update status → “Pending Approval.”
-- Notify manager → via Email Alert.
-- Create a Task for the manager → “Review Leave Request.”
+- Process Builder is used for conditional automation that cannot be handled by simple workflow rules.
+Example:
+- If Status = Approved → Trigger email to employee confirming approval.
+- If Status = Rejected → Trigger email with rejection reason.
 
 ## 4. Flow Builder
-
-### Record-Triggered Flows:
-
-- When leave is Approved → Update Leave Balance (reduce remaining days).
-- When leave is Rejected → Notify employee with rejection reason.
-- When leave is Cancelled → Recalculate Leave Balance.
 
 ### Screen Flows (for employees):
 
@@ -35,22 +46,17 @@ Guided process to apply for leave.
 - Step 3: Provide Reason.
 - Step 4: Review & Submit.
 
-### Scheduled Flows:
-
-- Send monthly leave balance summaries to employees.
-- Auto-update status for expired requests (e.g., if leave date has passed but no action taken → mark as “Expired”).
-
-### Auto-Launched Flows:
-
-- Triggered by Approval/Rejection → Sends Email/SMS notification.
+  <img width="1893" height="892" alt="image" src="https://github.com/user-attachments/assets/6dde9cf4-70ee-49db-bcc3-b51c3f1f2275" />
 
 ## 5. Approval Process
 
 - Step 1: Employee submits request → Status = Pending.
 - Step 2: Manager receives approval request.
 - Step 3: Manager approves or rejects.
-- Step 4: If approved → Update Leave Balance.
+- Step 4: If approved → Send email to employee.
 - Step 5: If rejected → Send email to employee.
+
+    <img width="1897" height="908" alt="image" src="https://github.com/user-attachments/assets/f4aff111-c9de-4f6c-9b74-b81e1c03ae22" />
 
 ## 6. Email Alerts
 
@@ -72,6 +78,6 @@ Guided process to apply for leave.
 
 ## ✅ Phase 4 Outcome:
 
-- All leave management workflows automated (submission, approval, balance updates, rejection, cancellation).
+- All leave management workflows automated (submission, approval, rejection, cancellation).
 - Employees & managers receive real-time notifications.
 - HR/Admin has complete visibility with fewer manual interventions.
