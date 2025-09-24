@@ -1,12 +1,10 @@
 # Phase 3: Data Modeling & Relationships
 ## 1. Standard & Custom Objects
 ### Standard Objects Used:
-- User → Represents employees, managers, and HR.
-
+- LeaveRequest__c – The main object that stores all employee leave applications.
 ### Custom Objects Created:
 
 - Leave Request → Stores each leave application.
-- Leave Balance → Tracks annual leave entitlement, used leaves, and remaining balance.
 - Holiday Calendar → Stores organization-wide holidays.
 - Approval History → Records manager approvals/rejections for audit purposes.
 
@@ -23,13 +21,6 @@
 - Status (Picklist: Draft, Submitted, Approved, Rejected, Cancelled)
 - Manager Comments (Long Text)
 
-### Leave Balance Object Fields:
-
-- Employee (Lookup to User)
-- Year (Picklist)
-- Total Leaves (Number)
-- Used Leaves (Number)
-- Remaining Leaves (Formula: Total – Used)
 
 - <img width="1886" height="920" alt="image" src="https://github.com/user-attachments/assets/de925a3a-77d6-4750-ac47-6e71675c96cf" />
   
@@ -50,22 +41,16 @@
 
 - Employee Layout (Leave Request): Fields: From Date, To Date, Reason, Leave Type.
 - Manager Layout (Leave Request): Includes additional fields: Status, Manager Comments.
-- HR/Admin Layout: Full access including audit/approval history.
 
-## 5. Compact Layouts
+- 
+  <img width="1920" height="1080" alt="Screenshot 2025-09-13 155110" src="https://github.com/user-attachments/assets/a49549cb-fc3f-46a0-9cae-f6ca2b926ffb" />
 
-- For Leave Request, compact layout shows: Leave Type, Dates, Status.
-- For Leave Balance, compact layout shows: Year, Remaining Leaves.
 
-## 6. Schema Builder
+### Compact Layouts
 
-Used to design relationships visually:
+   - For Leave Request, compact layout shows: Leave Type, Dates, Status.
 
-- User → Leave Request (Lookup)
-- User → Leave Balance (Lookup)
-- Holiday Calendar → Leave Request (for calculating days).
-
-## 7. Relationships
+## 5. Relationships
 
 ### Lookup Relationship:
 
@@ -76,15 +61,9 @@ Used to design relationships visually:
 
 - Approval History → Leave Request (deletes when parent request is deleted).
 
-### Junction Objects (if required):
-
-- If employees can have multiple leave policies, a junction between User and Leave Policy object can be created.
-
-
 
 ## ✅ Phase 3 Outcome:
 
 - Data model created with required custom objects and fields.
-- Relationships established between employees, leave requests, balances, and holidays.
+- Relationships established between employees, leave requests.
 - Record types, page layouts, and compact layouts designed for different users.
-- Schema validated for scalability and integration readiness.
