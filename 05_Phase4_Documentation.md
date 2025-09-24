@@ -66,6 +66,9 @@ Guided process to apply for leave.
   <img width="1908" height="907" alt="image" src="https://github.com/user-attachments/assets/cd58125b-028d-47bd-9af0-7aea2e56db8d" />
 
 - Leave Request Rejected: Sent to Employee.
+
+   <img width="1906" height="888" alt="image" src="https://github.com/user-attachments/assets/cf66f180-2a75-44ec-92dc-03ced73061bd" />
+
 - Leave Balance Reminder: Monthly email to Employee.
 
 ## 7. Field Updates
