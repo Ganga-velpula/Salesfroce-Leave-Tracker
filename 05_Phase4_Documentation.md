@@ -62,6 +62,9 @@ Guided process to apply for leave.
 
 - Leave Request Submitted: Sent to Manager.
 - Leave Request Approved: Sent to Employee.
+
+  <img width="1908" height="907" alt="image" src="https://github.com/user-attachments/assets/cd58125b-028d-47bd-9af0-7aea2e56db8d" />
+
 - Leave Request Rejected: Sent to Employee.
 - Leave Balance Reminder: Monthly email to Employee.
 
