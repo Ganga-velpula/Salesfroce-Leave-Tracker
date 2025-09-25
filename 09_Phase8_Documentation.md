@@ -1,20 +1,34 @@
-# Phase 8: Deployment & Release Management
+# Phase 8: Data Management & Deployment
 ## 🔹 Objective
 
 - To ensure smooth and error-free deployment of Leave Tracker customizations from development to higher environments (UAT, Production) using best practices and tools.
 
-## 1. Deployment Approaches
+## 1. Data Import Wizard
+- Used to load initial employee data (Users, basic LeaveRequest__c records).
+- Supports CSV files.
+- Best for small/medium data volumes (< 50,000 records).
 
-- Change Sets (click-based, easy for Admins, limited for Dev-heavy projects).
-- VS Code with Salesforce CLI (SFDX) – developer-friendly, supports version control (GitHub/GitLab/Bitbucket).
-- CI/CD Tools: GitHub Actions, Bitbucket Pipelines, or Copado for automated deployment.
+  ## 2. Data Loader
+
+- Used to perform bulk operations (insert, update, delete, upsert) for large datasets.
+- Example: Bulk upload of historical leave records.
+- Supports command-line interface for automation.
+- 📌 Example CLI Command:
+-     sfdx force:data:tree:import --plan leaveRequestPlan.json
+
+## 3. Duplicate Rules
+
+- Configured to prevent overlapping leave requests for the same employee.
+- Example Rule:
+-      Block duplicate LeaveRequest__c if Employee = same and From Date/To Date overlaps
+
   
 ## 3. Change Sets
 
 Used Change Sets for deploying metadata between environments (Sandbox → Production).
 ### Included:
 
-- Custom Objects (LeaveRequest__c, LeaveBalance__c)
+- Custom Objects (LeaveRequest__c)
 - Apex Classes (LeaveRequestController, Triggers)
 - Lightning Web Components (applyLeave, myLeaves, leaveRequest)
 - Email Templates & Flows
