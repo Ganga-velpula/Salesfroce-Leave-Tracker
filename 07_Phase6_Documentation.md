@@ -44,7 +44,6 @@
 - Added Quick Actions:
 
   - Apply Leave
-  - Check Leave Balance
   - Contact HR (case creation)
 
 ## 6.Lightning Web Components (LWC)
@@ -56,16 +55,72 @@
   - Form for employees to apply for leave.
   - Fields: Leave Type, From Date, To Date, Reason.
   - Client-side validation before submission.
+ 
+        // applyLeave.js
+        import { LightningElement, track } from 'lwc';
+        import createLeaveRequest from '@salesforce/apex/LeaveRequestController.createLeaveRequest';
+        
+        export default class ApplyLeave extends LightningElement {
+            @track leaveType;
+            @track fromDate;
+            @track toDate;
+            @track reason;
+    
+        handleSubmit() {
+            if(!this.leaveType || !this.fromDate || !this.toDate) {
+                alert('All fields are required');
+                return;
+            }
+            createLeaveRequest({
+                leaveType: this.leaveType,
+                fromDate: this.fromDate,
+                toDate: this.toDate,
+                reason: this.reason
+            })
+            .then(() => {
+                alert('Leave request submitted successfully');
+            })
+            .catch(error => {
+                console.error(error);
+            });
+        }
+        }
+
 
 - myLeaves
   - Displays logged-in employee’s leave history.
   -  Uses @wire to fetch data from LeaveRequestController.getMyLeaves().
-  - Shows leave status with color-coded badges (Approved = Green, Pending = Yellow, Rejected = Red).
-
+    - Color-coded statuses:
+    -     Approved ✅ = Green
+    -     Pending ⏳ = Yellow
+    -     Rejected ❌ = Red
 - leaveRequest (Manager View)
   - Managers can view and act on leave requests.
   - Buttons for Approve / Reject directly from the LWC.
   - Sends updates via Apex controller + email notifications.
+
+            // leaveRequest.js
+        import { LightningElement, track, wire } from 'lwc';
+        import getPendingRequests from '@salesforce/apex/LeaveRequestController.getPendingRequests';
+        import updateLeaveStatus from '@salesforce/apex/LeaveRequestController.updateLeaveStatus';
+        
+        export default class LeaveRequest extends LightningElement {
+            @wire(getPendingRequests) requests;
+        
+            handleAction(event) {
+                const leaveId = event.target.dataset.id;
+                const status = event.target.dataset.status;
+        
+                updateLeaveStatus({ leaveId: leaveId, newStatus: status })
+                    .then(() => {
+                        alert('Leave ' + status);
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
+            }
+        }
+
 
 ## 7. Apex with LWC
 
