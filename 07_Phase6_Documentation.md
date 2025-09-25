@@ -8,6 +8,9 @@
   - My Leaves (employee leave records)
   - Leave Requests (manager view)
   - Reports & Dashboards
+ 
+    <img width="1882" height="882" alt="image" src="https://github.com/user-attachments/assets/f46e75c9-f480-4708-9e8b-d3192c71c4b0" />
+
 
 ## 2. Record Pages
 
@@ -24,7 +27,9 @@
 
 - Created custom tabs for:
   - Leave Request (object tab)
-  - Leave Balance (object tab)
+ 
+     <img width="1892" height="756" alt="image" src="https://github.com/user-attachments/assets/6c3afa13-e72f-4ec4-8831-5ffd7a9e9749" />
+     
   - Leave Dashboard (Lightning app page with reports & charts)
 
 ## 4. Home Page Layouts
