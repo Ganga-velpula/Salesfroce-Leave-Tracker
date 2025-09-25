@@ -38,6 +38,9 @@
   - Employee Leave Summary Chart
   - Quick Action: Apply for Leave
   - Recent Leave Requests list view
+ 
+    <img width="1915" height="986" alt="image" src="https://github.com/user-attachments/assets/2045b1f1-a6f4-43f1-b248-6976e9abe6de" />
+
 
 ## 5. Utility Bar
 
