@@ -58,7 +58,21 @@ Guided process to apply for leave.
 
     <img width="1897" height="908" alt="image" src="https://github.com/user-attachments/assets/f4aff111-c9de-4f6c-9b74-b81e1c03ae22" />
 
-## 6. Email Alerts
+## 6. Email Flows & Alerts
+### A. Email Flow
+- 1. Click Setup ()→ Quick Find→ Flows New Flow.
+
+- 2. Select Record-Triggered Flow.
+
+- 3. Choose Object: Leave_Request_Status_Notification → Trigger: When record is created→ After Save.
+
+- 4. Add Action Send Email Select Welcome Email Template.
+
+- 5. Save and Activate.
+     
+<img width="1895" height="905" alt="image" src="https://github.com/user-attachments/assets/61015d39-e949-456c-ac54-af79de9dd6b9" />
+ 
+### B. Email Alerts
 
 - Leave Request Submitted: Sent to Manager.
 - Leave Request Approved: Sent to Employee.
